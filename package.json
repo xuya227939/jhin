@@ -1,0 +1,99 @@
+{
+    "name": "live-center-mobile",
+    "version": "1.0.0",
+    "private": true,
+    "description": "",
+    "templateInfo": {
+        "name": "taro-ui",
+        "typescript": true,
+        "css": "less"
+    },
+    "scripts": {
+        "build:weapp": "NODE_ENV=production taro build --type weapp",
+        "build:swan": "taro build --type swan",
+        "build:alipay": "taro build --type alipay",
+        "build:tt": "taro build --type tt",
+        "build:h5": "taro build --type h5",
+        "build:rn": "taro build --type rn",
+        "build:qq": "taro build --type qq",
+        "build:jd": "taro build --type jd",
+        "build:quickapp": "taro build --type quickapp",
+        "dev:weapp": "npm run build:weapp -- --watch",
+        "dev:swan": "npm run build:swan -- --watch",
+        "dev:alipay": "npm run build:alipay -- --watch",
+        "dev:tt": "npm run build:tt -- --watch",
+        "dev:h5": "npm run build:h5 -- --watch",
+        "dev:rn": "npm run build:rn -- --watch",
+        "dev:qq": "npm run build:qq -- --watch",
+        "dev:jd": "npm run build:jd -- --watch",
+        "dev:quickapp": "npm run build:quickapp -- --watch",
+        "lint:tsx": "eslint --ext .tsx src && eslint --ext .ts src",
+        "lint:less": "stylelint --aei .less .css src",
+        "precommit": "lint-staged",
+        "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+    },
+    "pre-commit": [
+        "precommit",
+        "precommit-msg"
+    ],
+    "lint-staged": {
+        "src/*.{js,jsx,ts,tsx}": [
+            "eslint --fix",
+            "git add"
+        ],
+        "src/*.{css,less}": [
+            "stylelint",
+            "git add"
+        ]
+    },
+    "browserslist": [
+        "last 3 versions",
+        "Android >= 4.1",
+        "ios >= 8"
+    ],
+    "author": "",
+    "dependencies": {
+        "@babel/plugin-proposal-optional-chaining": "^7.12.1",
+        "@babel/runtime": "^7.7.7",
+        "@tarojs/cli": "3.0.15",
+        "@tarojs/components": "3.0.15",
+        "@tarojs/react": "3.0.15",
+        "@tarojs/runtime": "3.0.15",
+        "@tarojs/taro": "3.0.15",
+        "lodash": "4.17.15",
+        "react": "^16.10.0",
+        "react-dom": "^16.10.0",
+        "taro-axios": "^1.1.1",
+        "taro-ui": "^3.0.0-alpha.3"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.8.0",
+        "@babel/plugin-proposal-decorators": "^7.8.0",
+        "@tarojs/mini-runner": "3.0.15",
+        "@tarojs/webpack-runner": "3.0.15",
+        "@types/webpack-env": "^1.13.6",
+        "babel-preset-taro": "3.0.15",
+        "@typescript-eslint/parser": "^2.x",
+        "@typescript-eslint/eslint-plugin": "^2.x",
+        "typescript": "^3.7.0",
+        "@types/react": "^16.0.0",
+        "eslint": "^6.8.0",
+        "eslint-config-taro": "3.0.15",
+        "eslint-plugin-react-hooks": "^1.6.1",
+        "eslint-config-prettier": "^6.11.0",
+        "eslint-config-standard": "^14.1.0",
+        "eslint-loader": "^3.0.4",
+        "eslint-plugin-import": "^2.22.0",
+        "eslint-plugin-promise": "^4.2.1",
+        "eslint-plugin-react": "^7.20.6",
+        "eslint-plugin-standard": "^4.0.1",
+        "lint-staged": "^10.0.8",
+        "pre-commit": "^1.2.2",
+        "style-loader": "^1.2.1",
+        "stylelint": "^13.0.0",
+        "stylelint-config-taro-rn": "2.1.5",
+        "stylelint-taro-rn": "2.1.5",
+        "stylelint-config-prettier": "^8.0.2",
+        "stylelint-config-standard": "^19.0.0"
+    }
+}

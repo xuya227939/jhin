@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "Node",
+        "target": "es2015",
+        "jsx": "react",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ],
+            "@components/*": [
+                "./src/components/*"
+            ],
+            "@assets/*": [
+                "./src/assets/*"
+            ],
+            "@config": [
+                "./src/config.ts"
+            ],
+            "@request": [
+                "./src/request.ts"
+            ],
+            "@utils/*": [
+                "./src/utils/*"
+            ]
+        }
+    }
+}
